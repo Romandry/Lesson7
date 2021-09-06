@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/fragment1">
+
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="ua.javabegin.examples.lesson7.Fragment1"
+        android:label="fragment_1"
+        tools:layout="@layout/fragment_1" >
+        <action
+            android:id="@+id/action_fragment1_to_fragment2"
+            app:destination="@id/fragment2" />
+        <argument
+            android:name="param1"
+            app:argType="string"
+            android:defaultValue="foo" />
+        <argument
+            android:name="param2"
+            app:argType="string"
+            android:defaultValue="bar" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="ua.javabegin.examples.lesson7.Fragment2"
+        android:label="fragment_2"
+        tools:layout="@layout/fragment_2" >
+        <action
+            android:id="@+id/action_fragment2_to_fragment1"
+            app:destination="@id/fragment1" />
+    </fragment>
+    <activity
+        android:id="@+id/secondActivity"
+        android:name="ua.javabegin.examples.lesson7.SecondActivity"
+        android:label="activity_second"
+        tools:layout="@layout/activity_second" />
+</navigation>
